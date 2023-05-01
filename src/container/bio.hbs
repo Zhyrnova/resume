@@ -1,0 +1,159 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    {{#with bio}}
+    <div>
+        <h1>{{name}}</h1>
+    </div>
+    <div>
+        Date and place of birth:{{birthdate}}, <q>{{birthplace}}</q>
+    </div>
+    <div>
+        Date and place of death:{{deathdate}}, <q>{{deathplace}}</q>
+    </div>
+
+    <br>
+
+    <div>
+        Nationality:{{nationality}}
+    </div>
+    <div>
+        Occupation:{{occupation}}
+    </div>
+    <div>
+        Known for:<q>{{this}}</q>
+    </div>
+
+    <br>
+
+    <hr>
+
+    <br>
+
+    <section>
+        {{#each education}}
+        <div>
+            <strong>
+                {{degree}}
+                {{field}}
+                {{institution}}
+                {{year}}
+            </strong>
+        </div>
+        {{/each}}
+    </section>
+
+    <br>
+
+    <ul>
+        {{#each notable_publications}}
+        <li>
+            <div><b><q>{{title}}</q></b></div>
+            <div>{{year}}</div>
+            <div>{{publisher}}</div>
+            <br>
+            <div><b><q>{{title}}</q></b></div>
+            <div>{{year}}</div>
+            <div>{{publisher}}</div>
+        </li>
+        {{/each}}
+    </ul>
+
+    <br>
+
+    <hr>
+
+    <br>
+
+    <ul>
+        {{#each partners}}
+        <li>
+            <div><b>{{name}}</b></div>
+            <div>{{relationship}}</div>
+            <div>{{years}}</div>
+            <br>
+            <div><b>{{name}}</b></div>
+            <div>{{relationship}}</div>
+            <div>{{years}}</div>
+        </li>
+        {{/each}}
+    </ul>
+
+    <br>
+
+    <hr>
+
+    <br>
+
+    <section>
+        {{#each awards}}
+        <div>
+            <strong>
+                {{title}}
+                {{year}}
+                <q>{{description}}</q>
+            </strong>
+        </div>
+        {{/each}}
+    </section>
+
+    <br>
+
+    <hr>
+
+    <br>
+
+    <section>
+        <div>
+            Influences:<q>{{this}}</q>
+        </div>
+        <div>
+            Influenced:<q>{{this}}</q>
+        </div>
+        <div>
+            Quotes:<blockquote>{{this}}</blockquote>
+        </div>
+    </section>
+
+    <br>
+
+    <hr>
+
+    <br>
+
+    <ul>
+        {{#each major_discoveries}}
+        <li>
+            <div>
+                {{title}}
+                {{year}}
+                <q>{{description}}</q>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+
+    <br>
+
+    <ul>
+        {{#each contributions}}
+        <li>
+            <div>
+                {{title}}
+                {{year}}
+                <q>{{description}}</q>
+                {{field}}
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+    {{/with}}
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
