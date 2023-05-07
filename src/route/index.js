@@ -35,6 +35,18 @@ var footer = {
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('index', {})
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/education', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -467,6 +479,7 @@ router.get('/person', function (req, res) {
 })
 
 // ================================================================
+
 // router.get Створює нам один ентпоїнт
 
 router.get('/facebook', function (req, res) {
@@ -818,6 +831,7 @@ router.get('/car', function (req, res) {
 })
 
 // ================================================================
+
 router.get('/js', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -894,16 +908,14 @@ router.get('/js', function (req, res) {
       },
     ],
   })
-  //                  ↑↑ сюди вводимо JSON дані
 })
-
+//                  ↑↑ сюди вводимо JSON дані
 // ================================================================
-router.get('/web', function (req, res) {
-  // res.render генерує нам HTML сторінку
 
+router.get('/web', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('web', {
-    layout: 'basic',
+    layout: 'web',
     web: {
       languages: [
         {
