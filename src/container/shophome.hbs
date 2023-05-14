@@ -3,21 +3,19 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 <main>
-    <div class="card m-2">
-        {{#with navigation.links}}
-        <div class="nav">
-            <div class="nav-item">
-                <a href="https://github.com/" class="nav-link">Home</a>
-            </div>
-            <div class="nav-item">
-                <a href="https://www.google.com/" class="nav-link">Contacts</a>
-            </div>
-            <div class="nav-item">
-                <a href="https://www.youtube.com/" class="nav-link">Help</a>
+    {{#with navigation}}
+    <div class="row">
+        <div class="card">
+            <div class="nav">
+                {{#each links}}
+                <div class="nav-item py-2">
+                    <a href={{href}} class="nav-link">{{text}}</a>
+                </div>
+                {{/each}}
             </div>
         </div>
-        {{/with}}
     </div>
+    {{/with}}
     {{#with newsBlock}}
     <h2 class="text-center pt-5">{{title}}</h2>
     <div class="row">
@@ -79,19 +77,17 @@
     </div>
     {{/with}}
     <hr class="pt-4">
-    <div class="row gy-4 pb-4">
+    <div class="row gy-4">
         {{#with subscribe}}
         <div class="col-12">
-            <div class="card text-bg-dark p-4">
+            <div class="card text-bg-dark p-2">
                 <h2>{{header}}</h2>
                 <p>{{description}}</p>
-                <div>
-                    <button class="btn btn-primary" href="https://www.youtube.com/">Register Now</button>
+                {{#each buttons}}
+                <div class="pb-3">
+                    <button class="btn btn-primary" href={{link}}>{{text}}</button>
                 </div>
-                <br>
-                <div>
-                    <button class="btn btn-primary" href="https://www.youtube.com/">Buy Subscription</button>
-                </div>
+                {{/each}}
             </div>
         </div>
         {{/with}}
