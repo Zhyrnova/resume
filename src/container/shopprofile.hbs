@@ -1,0 +1,212 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<main>
+    {{#with navigation}}
+    <div class="row">
+        <div class="card">
+            <div class="nav">
+                {{#each links}}
+                <div class="nav-item py-2">
+                    <a href="{{href}}" class="nav-link 
+                    {{#if @last includeZero=" true"}}disabled{{/if}}">{{text}}</a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/with}}
+
+    <br>
+    <h1 class="my-4">{{header}}</h1>
+    {{#with purchase}}
+    {{#with tabs}}
+    <div class="row">
+        <div class="col-12">
+            <div class="nav nav-tabs">
+                <div class="nav-item">
+                    <a class="nav-link active">Всі замовлення</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link">Гарантія та повернення</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/with}}
+    {{#with actionBlock}}
+    {{#with input.placeholder}}
+    <div class="row my-4">
+        <div class="col-4">
+            <input class="form-control">
+        </div>
+        {{/with}}
+        <div class="col-8">
+            {{#each buttons}}
+            {{#if isSuccess}}<a href="{{link}}" class="btn btn-success">{{text}}</a>{{/if}}
+            {{#if isOutline}}<a href="{{link}}" class="btn btn-outline-success">{{text}}</a>{{/if}}
+            {{#if isDanger}}<a href="{{link}}" class="btn btn-outline-danger">{{text}}</a>{{/if}}
+            {{/each}}
+        </div>
+    </div>
+    {{/with}}
+    <hr>
+
+    <div class="row">
+        {{#each itemList}}
+        {{> purchaseItem itemList=itemList}}
+        {{/each}}
+    </div>
+    {{/with}}
+    <hr class="my-5">
+    {{#with userInfo}}
+    <h1 class="mb-5">{{title}}</h1>
+    <div class="row my-2">
+        <div class="card">
+            <div class="card-body">
+                {{#with profileData}}
+                <h3 class="mb-4">{{title}}</h3>
+                {{#with fullName}}
+                <div class="card my-2">
+                    <div class="card-body row">
+                        {{#with surname}}
+                        <div class="col-4">
+                            <p>{{title}}</p>
+                            <h5>{{value}}</h5>
+                        </div>
+                        {{/with}}
+                        {{#with name}}
+                        <div class="col-4">
+                            <p>{{title}}</p>
+                            <h5>{{value}}</h5>
+                        </div>
+                        {{/with}}
+                        {{#with middleName}}
+                        <div class="col-4">
+                            <p>{{title}}</p>
+                            <h5>{{value}}</h5>
+                        </div>
+                        {{/with}}
+                    </div>
+                </div>
+                {{/with}}
+
+                {{#with otherInfo}}
+                <div class="card my-2">
+                    <div class="card-body row">
+                        {{#with birthday}}
+                        <div class="col-4">
+                            <p>{{title}}</p>
+                            <h5>{{value}}</h5>
+                        </div>
+                        {{/with}}
+                        {{#with sex}}
+                        <div class="col-4">
+                            <p>{{title}}</p>
+                            <h5>{{value}}</h5>
+                        </div>
+                        {{/with}}
+                        {{#with language}}
+                        <div class="col-4">
+                            <p>{{title}}</p>
+                            <h5>{{value}}</h5>
+                        </div>
+                        {{/with}}
+                    </div>
+                </div>
+                {{/with}}
+                {{/with}}
+                <div class="card my-2">
+                    <div class="card-body row">
+                        {{#each buttons}}
+                        <div class="col-4">
+                            {{#if isPrimary}}<a href="{{link}}" class="btn btn-primary">{{text}}</a>{{/if}}
+                            {{#if isSecondary}}<a href="{{link}}" class="btn btn-outline-secondary">
+                                {{text}}</a>{{/if}}
+                            {{#if isDanger}}<a href="{{link}}" class="btn btn-outline-danger">{{text}}</a>{{/if}}
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card my-3">
+            <div class="card-body">
+                {{#with recipients}}
+                <h3 class="mb-4">{{title}}</h3>
+                <div class="row">
+                    {{#each users}}
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5>{{name}}</h5>
+                                <p>{{phone}}</p>
+                                {{#with button}}
+                                <a href="{{link}}" class="btn btn-primary">{{text}}</a>
+                                {{/with}}
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/with}}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                {{#with contacts}}
+                <h3 class="mb-4">{{title}}</h3>
+                <div class="row">
+                    {{#each contactData}}
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>{{title}}</p>
+                                <h5>{{value}}</h5>
+
+                                {{#with button}}
+                                {{#if isPrimary}}<a href="{{link}}" class="btn btn-primary">{{text}}</a>{{/if}}
+                                {{#if isSecondary}}<a href="{{link}}"
+                                    class="btn btn-outline-secondary">{{text}}</a>{{/if}}
+                                {{#if isDanger}}<a href="{{link}}" class="btn btn-outline-danger">{{text}}</a>{{/if}}
+                                {{/with}}
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/with}}
+            </div>
+        </div>
+    </div>
+
+    {{/with}}
+
+    <hr class="my-5">
+    <div class="row">
+        {{#each footer}}
+        <div class="col-2">
+            {{#each this}}
+            <div class="nav flex-column">
+                <div class="nav-item">
+                    <a href={{link}} class="nav-link {{#if @last}}disabled{{/if}}">{{text}}</a>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+
+</main>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
