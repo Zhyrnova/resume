@@ -1633,92 +1633,210 @@ router.get('/shophome', function (req, res) {
           text: 'Toys & Games',
         },
       ],
+      cards: [
+        {
+          image: 'https://picsum.photos/400/200',
+          title: 'iPhone 13',
+          description:
+            'The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.',
+          isHot: false,
+          isNew: false,
+        },
+        {
+          image: 'https://picsum.photos/400/200',
+          title: 'MacBook Pro',
+          description:
+            "Apple's high-end laptop features a 16-inch Retina display, powerful M1 Pro or M1 Max chip, and up to 64GB of RAM.",
+          isHot: true,
+          isNew: false,
+        },
+        {
+          image: 'https://picsum.photos/400/200',
+          title: 'AirPods Pro',
+          description:
+            "Apple's premium wireless earbuds feature active noise cancellation, a customizable fit, and up to 4.5 hours of listening time.",
+          isHot: false,
+          isNew: false,
+        },
+        {
+          image: 'https://picsum.photos/400/200',
+          title: 'Sony Bravia XR A90J',
+          description:
+            'This OLED TV boasts a 4K resolution, HDR support, and a high refresh rate for smooth motion handling.',
+          isHot: false,
+          isNew: true,
+        },
+        {
+          image: 'https://picsum.photos/400/200',
+          title: 'Nintendo Switch OLED Model',
+          description:
+            'The latest iteration of the popular gaming console features a larger OLED screen and improved audio quality.',
+          isHot: false,
+          isNew: false,
+        },
+        {
+          image: 'https://picsum.photos/400/200',
+          title: 'Bose SoundLink Revolve+',
+          description:
+            'This portable Bluetooth speaker features 360-degree sound, water-resistant construction, and up to 16 hours of battery life.',
+          isHot: true,
+          isNew: true,
+        },
+      ],
+    },
+    subscribe: {
+      header: 'Unlock Premium Content',
+      description:
+        'Subscribe to access exclusive content and features.',
+      buttons: [
+        {
+          text: 'Register Now',
+          link: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Buy Subscription',
+
+          link: 'https://www.youtube.com/',
+        },
+      ],
+    },
+    service: {
+      title: 'Our Services',
+      description:
+        'We offer a variety of services to meet your needs, including web design, content creation, and social media management.',
+      buttons: [
+        {
+          text: 'Show More',
+          link: 'https://www.youtube.com/',
+        },
+      ],
+    },
+
+    footer: [
+      [
+        {
+          text: 'Home',
+          link: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
+        },
+        {
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
+        },
+        {
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
+        },
+      ],
+      [
+        {
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
+        },
+        {
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
+        },
+        {
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
+        },
+        {
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
+        },
+      ],
+      [
+        {
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
+        },
+        {
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
+        },
+        {
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
+        },
+        {
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
+        },
+      ],
+      [
+        {
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+        },
+        {
+          text: 'News',
+          link: 'https://www.youtube.com/news',
+        },
+        {
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
+        },
+        {
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
+        },
+      ],
+      [
+        {
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
+        },
+        {
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
+        },
+        {
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+        },
+        {
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
+        },
+      ],
+    ],
+  })
+})
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/shoporder', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shoporder', {
+    layout: 'shop',
+    navigation: {
+      links: [
+        {
+          text: 'Home',
+          href: 'https://github.com/',
+        },
+        {
+          text: 'Contacts',
+          href: 'https://www.google.com/',
+        },
+        {
+          text: 'Help',
+          href: 'https://www.youtube.com/',
+        },
         {
           text: 'Exit',
           href: null,
-      ],
-    },
-
-    header: {
-      title: 'Кошик',
-      button: {
-        text: 'Продовжити покупки',
-        link: 'https://www.youtube.com/',
-      },
-    },
-
-    goodsBlock: [
-      {
-        image: 'https://picsum.photos/110/110',
-        name: 'Samsung Galaxy S21 Ultra ',
-        description:
-          'екран 6.8", процесор Exynos 2100/Snapdragon 888, 12 ГБ ОЗУ, камера 108 МП, акумулятор 5000 мАг',
-        price: { title: 'Ціна', value: '25 000 ₴' },
-        amount: '1 шт.',
-        buttons: [
-          { text: 'Додати', isPrimary: true },
-          { text: 'Видалити', isDanger: true },
-        ],
-      },
-      {
-        image: 'https://picsum.photos/110/110',
-        name: 'Ноутбук Dell XPS 13',
-        description:
-          'екран 13.3", процесор Intel Core i7-1165G7, 16 ГБ ОЗУ, SSD на 512 ГБ, вага 1.2 кг.',
-        price: { title: 'Ціна', value: '25 000 ₴' },
-
-        amount: '1 шт.',
-        buttons: [
-          { text: 'Додати', isPrimary: true },
-          { text: 'Видалити', isDanger: true },
-        ],
-      },
-      {
-        image: 'https://picsum.photos/110/110',
-        name: 'Телевізор LG OLED CX',
-        description:
-          'екран 55", роздільна здатність 4K, Smart TV, HDR, звук Dolby Atmos, 4 HDMI порти, 3 USB порти.',
-        price: { title: 'Ціна', value: '25 000 ₴' },
-
-        amount: '1 шт.',
-        buttons: [
-          { text: 'Додати', isPrimary: true },
-          { text: 'Видалити', isDanger: true },
-        ],
-      },
-      {
-        image: 'https://picsum.photos/110/110',
-        name: 'Навушники Sony WH-1000XM4',
-        description:
-          'Bluetooth 5.0, активне шумозаглушення, 30 годин автономної роботи, сенсорне управління, вага 254 г.',
-        price: { title: 'Ціна', value: '25 000 ₴' },
-
-        amount: '1 шт.',
-        buttons: [
-          { text: 'Додати', isPrimary: true },
-          { text: 'Видалити', isDanger: true },
-        ],
-      },
-    ],
-
-    total: {
-      title: 'Сума замовлення',
-      amount: '75 000 ₴',
-      delivery: 'Без доставки',
-      buttons: [
-        {
-          text: 'Оформити замовлення',
-          link: 'https://www.youtube.com/',
-          isSuccess: true,
-        },
-        {
-          text: 'Офрмити кредит',
-          link: 'https://www.youtube.com/',
-          isOutline: true,
         },
       ],
     },
-
 
     header: 'Оформлення замовлення',
     contacts_data: {
@@ -1961,6 +2079,209 @@ router.get('/shophome', function (req, res) {
         ],
       },
     },
+    footer: [
+      [
+        {
+          text: 'Home',
+          link: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
+        },
+        {
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
+        },
+        {
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
+        },
+      ],
+      [
+        {
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
+        },
+        {
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
+        },
+        {
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
+        },
+        {
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
+        },
+      ],
+      [
+        {
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
+        },
+        {
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
+        },
+        {
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
+        },
+        {
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
+        },
+      ],
+      [
+        {
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+        },
+        {
+          text: 'News',
+          link: 'https://www.youtube.com/news',
+        },
+        {
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
+        },
+        {
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
+        },
+      ],
+      [
+        {
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
+        },
+        {
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
+        },
+        {
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+        },
+        {
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
+        },
+      ],
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/shopcart', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shopcart', {
+    layout: 'shop',
+    navigation: {
+      links: [
+        {
+          text: 'Home',
+          href: 'https://github.com/',
+        },
+        {
+          text: 'Contacts',
+          href: 'https://www.google.com/',
+        },
+        {
+          text: 'Help',
+          href: 'https://www.youtube.com/',
+        },
+      ],
+    },
+
+    header: {
+      title: 'Кошик',
+      button: {
+        text: 'Продовжити покупки',
+        link: 'https://www.youtube.com/',
+      },
+    },
+
+    goodsBlock: [
+      {
+        image: 'https://picsum.photos/110/110',
+        name: 'Samsung Galaxy S21 Ultra ',
+        description:
+          'екран 6.8", процесор Exynos 2100/Snapdragon 888, 12 ГБ ОЗУ, камера 108 МП, акумулятор 5000 мАг',
+        price: { title: 'Ціна', value: '25 000 ₴' },
+        amount: '1 шт.',
+        buttons: [
+          { text: 'Додати', isPrimary: true },
+          { text: 'Видалити', isDanger: true },
+        ],
+      },
+      {
+        image: 'https://picsum.photos/110/110',
+        name: 'Ноутбук Dell XPS 13',
+        description:
+          'екран 13.3", процесор Intel Core i7-1165G7, 16 ГБ ОЗУ, SSD на 512 ГБ, вага 1.2 кг.',
+        price: { title: 'Ціна', value: '25 000 ₴' },
+
+        amount: '1 шт.',
+        buttons: [
+          { text: 'Додати', isPrimary: true },
+          { text: 'Видалити', isDanger: true },
+        ],
+      },
+      {
+        image: 'https://picsum.photos/110/110',
+        name: 'Телевізор LG OLED CX',
+        description:
+          'екран 55", роздільна здатність 4K, Smart TV, HDR, звук Dolby Atmos, 4 HDMI порти, 3 USB порти.',
+        price: { title: 'Ціна', value: '25 000 ₴' },
+
+        amount: '1 шт.',
+        buttons: [
+          { text: 'Додати', isPrimary: true },
+          { text: 'Видалити', isDanger: true },
+        ],
+      },
+      {
+        image: 'https://picsum.photos/110/110',
+        name: 'Навушники Sony WH-1000XM4',
+        description:
+          'Bluetooth 5.0, активне шумозаглушення, 30 годин автономної роботи, сенсорне управління, вага 254 г.',
+        price: { title: 'Ціна', value: '25 000 ₴' },
+
+        amount: '1 шт.',
+        buttons: [
+          { text: 'Додати', isPrimary: true },
+          { text: 'Видалити', isDanger: true },
+        ],
+      },
+    ],
+
+    total: {
+      title: 'Сума замовлення',
+      amount: '75 000 ₴',
+      delivery: 'Без доставки',
+      buttons: [
+        {
+          text: 'Оформити замовлення',
+          link: 'https://www.youtube.com/',
+          isSuccess: true,
+        },
+        {
+          text: 'Офрмити кредит',
+          link: 'https://www.youtube.com/',
+          isOutline: true,
+        },
+      ],
+    },
+
     goodsOtherBlock: {
       title: 'See other products',
       cards: [
@@ -1970,9 +2291,6 @@ router.get('/shophome', function (req, res) {
           description:
             'The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.',
           isHot: false,
-
-          isNew: false,
-
           idNew: false,
         },
         {
@@ -1981,9 +2299,6 @@ router.get('/shophome', function (req, res) {
           description:
             "Apple's high-end laptop features a 16-inch Retina display, powerful M1 Pro or M1 Max chip, and up to 64GB of RAM.",
           isHot: true,
-
-          isNew: false,
-
           idNew: false,
         },
         {
@@ -1992,39 +2307,11 @@ router.get('/shophome', function (req, res) {
           description:
             "Apple's premium wireless earbuds feature active noise cancellation, a customizable fit, and up to 4.5 hours of listening time.",
           isHot: false,
-
-          isNew: false,
-        },
-        {
-          image: 'https://picsum.photos/400/200',
-          title: 'Sony Bravia XR A90J',
-          description:
-            'This OLED TV boasts a 4K resolution, HDR support, and a high refresh rate for smooth motion handling.',
-          isHot: false,
-          isNew: true,
-        },
-        {
-          image: 'https://picsum.photos/400/200',
-          title: 'Nintendo Switch OLED Model',
-          description:
-            'The latest iteration of the popular gaming console features a larger OLED screen and improved audio quality.',
-          isHot: false,
-          isNew: false,
-        },
-        {
-          image: 'https://picsum.photos/400/200',
-          title: 'Bose SoundLink Revolve+',
-          description:
-            'This portable Bluetooth speaker features 360-degree sound, water-resistant construction, and up to 16 hours of battery life.',
-          isHot: true,
-          isNew: true,
-        },
-      ],
-    },
           idNew: false,
         },
       ],
     },
+
     subscribe: {
       header: 'Unlock Premium Content',
       description:
@@ -2036,8 +2323,130 @@ router.get('/shophome', function (req, res) {
         },
         {
           text: 'Buy Subscription',
-
           link: 'https://www.youtube.com/',
+        },
+      ],
+    },
+
+    footer: [
+      [
+        {
+          text: 'Home',
+          link: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
+        },
+        {
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
+        },
+        {
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
+        },
+      ],
+      [
+        {
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
+        },
+        {
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
+        },
+        {
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
+        },
+        {
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
+        },
+      ],
+      [
+        {
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
+        },
+        {
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
+        },
+        {
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
+        },
+        {
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
+        },
+      ],
+      [
+        {
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+        },
+        {
+          text: 'News',
+          link: 'https://www.youtube.com/news',
+        },
+        {
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
+        },
+        {
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
+        },
+      ],
+      [
+        {
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
+        },
+        {
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
+        },
+        {
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+        },
+        {
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
+        },
+      ],
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/shopprofile', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shopprofile', {
+    layout: 'shop',
+    navigation: {
+      links: [
+        {
+          text: 'Home',
+          href: 'https://github.com/',
+        },
+        {
+          text: 'Contacts',
+          href: 'https://www.google.com/',
+        },
+        {
+          text: 'Help',
+          href: 'https://www.youtube.com/',
         },
       ],
     },
@@ -2212,6 +2621,130 @@ router.get('/shophome', function (req, res) {
           },
         ],
       },
+    },
+
+    footer: [
+      [
+        {
+          text: 'Home',
+          link: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
+        },
+        {
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
+        },
+        {
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
+        },
+      ],
+      [
+        {
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
+        },
+        {
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
+        },
+        {
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
+        },
+        {
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
+        },
+      ],
+      [
+        {
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
+        },
+        {
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
+        },
+        {
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
+        },
+        {
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
+        },
+      ],
+      [
+        {
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+        },
+        {
+          text: 'News',
+          link: 'https://www.youtube.com/news',
+        },
+        {
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
+        },
+        {
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
+        },
+      ],
+      [
+        {
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
+        },
+        {
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
+        },
+        {
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+        },
+        {
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
+        },
+      ],
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/shopreview', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shopreview', {
+    // layout: 'shop',
+    navigation: {
+      links: [
+        {
+          text: 'Home',
+          href: 'https://github.com/',
+        },
+        {
+          text: 'Contacts',
+          href: 'https://www.google.com/',
+        },
+        {
+          text: 'Help',
+          href: 'https://www.youtube.com/',
+        },
+      ],
+    },
     formBlock: {
       header: 'Відгуки покупців про Ноут',
       rating: {
@@ -2472,9 +3005,9 @@ router.get('/shophome', function (req, res) {
       ],
     ],
   })
+  //                  ↑↑ сюди вводимо JSON дані
 })
 
-//                  ↑↑ сюди вводимо JSON дані
 
 
 // ================================================================
@@ -2735,6 +3268,7 @@ router.get('/task31', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
+
 // ================================================================
 // router.get Створює нам один ентпоїнт
 
@@ -2745,15 +3279,9 @@ router.get('/bootstrap', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('bootstrap', {
     layout: 'bootstrap',
-
   })
 })
 
-
-
-// ================================================================
-
-//                  ↑↑ сюди вводимо JSON дані
 
 // ================================================================
 
@@ -3130,8 +3658,6 @@ router.get('/shopcatalog', function (req, res) {
   })
 })
 // ================================================================
-
-
 
 // Підключаємо роутер до бек-енду
 module.exports = router
