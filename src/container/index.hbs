@@ -3,12 +3,32 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
 --}}
 
-<div class="p-5">
-    <h1>USB хаб Type C 12 в 1 HDMI VGA AUX 3.5 mm</h1>
+<main>
+    <br>
+    <br>
+    {{#with actionBlock}}
 
+    <div class="col-12">
+        <div class="row">
+            <h1>{{title}}</h1>
+            <p>{{text}}</p>
+            {{#each buttons}}
+            <div class="col-2 m-2 text-center">
+                <div class="row">
+                    {{#if isPrimary}}<a href="{{link}}" class="btn btn-primary">{{text}}</a>{{/if}}
+                </div>
+            </div>{{/each}}
+        </div>
+    </div>
+    {{/with}}
+</main>
+
+<<<<<<< HEAD
 
     <button type="button" class="btn btn-primary">Купити</button>
 </div>
+=======
+>>>>>>> efedae2829d9b62492a3030740e938410da8a03c
 
 {{!--
 Цей код містить лише те, що буде виводитись в
