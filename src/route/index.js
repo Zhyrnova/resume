@@ -35,11 +35,133 @@ var footer = {
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/', function (req, res) {
+router.get('/index', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+    header: {
+      name: 'Zhyrnova Iryna',
+      title: 'Resume Project',
+    },
+    actionBlock: {
+      title: 'Список сторінок',
+      text: 'Початковий проєкт',
+      buttons: [
+        {
+          text: 'Skills',
+          isPrimary: true,
+          link: 'http://localhost:3000/skills',
+        },
+        {
+          text: 'Summary',
+          isPrimary: true,
+          link: 'http://localhost:3000/summary',
+        },
+        {
+          text: 'Education',
+          isPrimary: true,
+          link: 'http://localhost:3000/education',
+        },
+        {
+          text: 'Work',
+          isPrimary: true,
+          link: 'http://localhost:3000/work',
+        },
+        {
+          text: 'Person',
+          isPrimary: true,
+          link: 'http://localhost:3000/person',
+        },
+        {
+          text: 'Bio',
+          isPrimary: true,
+          link: 'http://localhost:3000/bio',
+        },
+        {
+          text: 'Program',
+          isPrimary: true,
+          link: 'http://localhost:3000/program',
+        },
+        {
+          text: 'Web',
+          isPrimary: true,
+          link: 'http://localhost:3000/web',
+        },
+        {
+          text: 'Js',
+          isPrimary: true,
+          link: 'http://localhost:3000/js',
+        },
+        {
+          text: 'Car',
+          isPrimary: true,
+          link: 'http://localhost:3000/car',
+        },
+        {
+          text: 'Mac',
+          isPrimary: true,
+          link: 'http://localhost:3000/mac',
+        },
+        {
+          text: 'Facebook',
+          isPrimary: true,
+          link: 'http://localhost:3000/facebook',
+        },
+        {
+          text: 'Task21',
+          isPrimary: true,
+          link: 'http://localhost:3000/task21',
+        },
+        {
+          text: 'Task22',
+          isPrimary: true,
+          link: 'http://localhost:3000/task22',
+        },
+        {
+          text: 'Task31',
+          isPrimary: true,
+          link: 'http://localhost:3000/task31',
+        },
+        {
+          text: 'Shophome',
+          isPrimary: true,
+          link: 'http://localhost:3000/shophome',
+        },
+        {
+          text: 'Shoporder',
+          isPrimary: true,
+          link: 'http://localhost:3000/shoporder',
+        },
+        {
+          text: 'Shopcart',
+          isPrimary: true,
+          link: 'http://localhost:3000/shopcart',
+        },
+        {
+          text: 'Shopprofile',
+          isPrimary: true,
+          link: 'http://localhost:3000/shopprofile',
+        },
+        {
+          text: 'Shopreview',
+          isPrimary: true,
+          link: 'http://localhost:3000/shopreview',
+        },
+        {
+          text: 'Shopcatalog',
+          isPrimary: true,
+          link: 'http://localhost:3000/shopcatalog',
+        },
+        {
+          text: 'Bootstrap',
+          isPrimary: true,
+          link: 'http://localhost:3000/bootstrap',
+        },
+      ],
+    },
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -198,18 +320,6 @@ router.get('/summary', function (req, res) {
 
     footer,
   })
-})
-
-// ================================================================
-// router.get Створює нам один ентпоїнт
-
-//           ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/', function (req, res) {
-  // res.render генерує нам HTML сторінку
-
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
-  //                  ↑↑ сюди вводимо JSON дані
 })
 
 // ================================================================
