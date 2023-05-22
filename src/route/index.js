@@ -1025,7 +1025,7 @@ router.get('/js', function (req, res) {
 router.get('/web', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('web', {
-    layout: 'web',
+    layout: 'basic',
     web: {
       languages: [
         {
